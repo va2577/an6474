@@ -2,22 +2,20 @@
   <meta name="description" content="{{- default .Summary .Description -}}">
 {{ end }}
 {{ define "title" }}
-  {{ .Title }} &ndash; {{ .Site.Title }}
+  {{ .Title }} &ndash; {{ $.Site.Title }}
 {{ end }}
 {{ define "main" }}
-  <main>
-    <h1>{{ .Title }}</h1>
-    <article>
-      <div>{{ .Date.Format "_2 January 2006" }}</div>
-      {{ .Content }}
-    </article>
-    <ul class="pagination">
-      {{ if .NextInSection }}
-        <li><a href="{{ .NextInSection.RelPermalink }}">Newer Post</a></li>
-      {{ end }}
-      {{ if .PrevInSection }}
-        <li><a href="{{ .PrevInSection.RelPermalink }}">Older Post</a></li>
-      {{ end }}
-    </ul>
-  </main>
+  <h1>{{ .Title }}</h1>
+  <article>
+    <div>{{ .Date.Format "_2 January 2006" }}</div>
+    {{ .Content }}
+  </article>
+  <ul class="pagination">
+    {{ if .NextInSection }}
+      <li><a href="{{ .NextInSection.RelPermalink }}">Newer Post</a></li>
+    {{ end }}
+    {{ if .PrevInSection }}
+      <li><a href="{{ .PrevInSection.RelPermalink }}">Older Post</a></li>
+    {{ end }}
+  </ul>
 {{ end }}

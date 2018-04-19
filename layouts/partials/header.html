@@ -4,10 +4,10 @@
   </div>
   <nav>
     <ul>
-      {{ range .Site.Menus.main }}
+      {{ range $.Site.Menus.main }}
         <li><a href="{{ .URL }}">{{ .Name | humanize }}</a></li>
       {{ end }}
-      {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+      {{ range $taxonomyname, $taxonomy := $.Site.Taxonomies }}
         <li><a href="{{ "/" | relURL }}{{ $taxonomyname | urlize }}/">{{ $taxonomyname | humanize }}</a></li>
       {{ end }}
     </ul>

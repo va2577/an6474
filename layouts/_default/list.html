@@ -1,23 +1,21 @@
 {{ define "title" }}
-  {{ .Title | humanize }} &ndash; {{ .Site.Title }}
+  {{ .Title | humanize }} &ndash; {{ $.Site.Title }}
 {{ end }}
 {{ define "main" }}
-  <main>
-    {{ if .Title }}
-      <h1>{{ .Title | humanize }}</h1>
-    {{ end }}
-    {{ if .Content }}
-      <article>
-        {{ .Content }}
-      </article>
-    {{ end }}
-    {{ if .Data.Pages }}
-      <ul>
-        {{ range .Paginator.Pages }}
-          {{ .Render "li" }}
-        {{ end }}
-      </ul>
-      {{ template "_internal/pagination.html" . }}
-    {{ end }}
-  </main>
+  {{ if .Title }}
+    <h1>{{ .Title | humanize }}</h1>
+  {{ end }}
+  {{ if .Content }}
+    <article>
+      {{ .Content }}
+    </article>
+  {{ end }}
+  {{ if .Data.Pages }}
+    <ul>
+      {{ range .Paginator.Pages }}
+        {{ .Render "li" }}
+      {{ end }}
+    </ul>
+    {{ template "_internal/pagination.html" . }}
+  {{ end }}
 {{ end }}

@@ -1,15 +1,13 @@
 {{ define "main" }}
-  <main>
-    {{ if .Title }}
-      <h1>{{ .Title }}</h1>
-    {{ end }}
-    {{ if .Content }}
-      <article>
-        {{ .Content }}
-      </article>
-    {{ end }}
-    {{ range first 10 (where .Data.Pages "Section" "!=" "") }}
-      {{ .Render "summary" }}
-    {{ end }}
-  </main>
+  {{ if .Title }}
+    <h1>{{ .Title }}</h1>
+  {{ end }}
+  {{ if .Content }}
+    <article>
+      {{ .Content }}
+    </article>
+  {{ end }}
+  {{ range first 10 (where .Data.Pages "Section" "!=" "") }}
+    {{ .Render "summary" }}
+  {{ end }}
 {{ end }}

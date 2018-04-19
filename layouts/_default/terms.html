@@ -1,17 +1,15 @@
 {{ define "title" }}
-  {{ .Title | humanize }} &dash; {{ .Site.Title }}
+  {{ .Title | humanize }} &dash; {{ $.Site.Title }}
 {{ end }}
 {{ define "main" }}
-  <main>
-    {{ $data := .Data }}
-    <h1>{{ $data.Plural | humanize }}</h1>
-    <ul class="taxonomy">
-      {{ range $key, $value := .Data.Terms.Alphabetical }}
-        <li>
-          <a href="{{ "/" | relURL }}{{ $data.Plural | urlize }}/{{ $value.Name | urlize }}/">{{ $value.Name | humanize }}</a>
-          {{ $value.Count }}
-        </li>
-      {{ end }}
-    </ul>
-  </main>
+  {{ $data := .Data }}
+  <h1>{{ $data.Plural | humanize }}</h1>
+  <ul class="taxonomy">
+    {{ range $key, $value := .Data.Terms.Alphabetical }}
+      <li>
+        <a href="{{ "/" | relURL }}{{ $data.Plural | urlize }}/{{ $value.Name | urlize }}/">{{ $value.Name | humanize }}</a>
+        {{ $value.Count }}
+      </li>
+    {{ end }}
+  </ul>
 {{ end }}

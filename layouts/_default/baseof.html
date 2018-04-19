@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ $.Site.Language.Lang }}">
   <head>
     {{ block "meta" . }}
       <meta charset="utf-8">
@@ -11,10 +11,11 @@
       {{ if .Keywords }}
         <meta name="keywords" content="{{ delimit .Keywords ", " }}">
       {{ end }}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ end }}
     <title>
       {{ block "title" . }}
-        {{ .Site.Title }}
+        {{ $.Site.Title }}
       {{ end }}
     </title>
     {{ block "style" . }}
@@ -25,8 +26,13 @@
     {{ block "header" . }}
       {{ partial "header.html" . }}
     {{ end }}
-    {{ block "main" . }}
-    {{ end }}
+    <main>
+      {{ block "main" . }}
+      {{ end }}
+      {{ if $.Site.Params.adsense }}
+        {{ partial "adsense.html" . }}
+      {{ end }}
+    </main>
     {{ block "footer" . }}
       {{ partial "footer.html" . }}
     {{ end }}
