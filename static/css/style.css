@@ -1,0 +1,94 @@
+body {
+  background-color: #f3f1ec;
+  color: #452c0a;
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  color: #2dadac;
+}
+blockquote {
+  border-left: #cec6b1 solid 4px;
+  color: #452c0a;
+  padding: 0 0.5rem;
+}
+code:not(.hljs) {
+  background-color: #452c0a;
+  color: #f3f1ec;
+}
+img {
+  max-height: 320px;
+  max-width: 640px;
+}
+table,
+th,
+td {
+  border: #452c0a solid 1px;
+  border-collapse: collapse;
+}
+body > header {
+  background-color: #452c0a;
+  color: #f3f1ec;
+  text-align: center;
+}
+body > header a {
+  color: #f3f1ec;
+  text-decoration: none;
+}
+body > header img {
+  max-height: 32px;
+  max-width: 32px;
+}
+body > header nav ul {
+  padding-left: 0px;
+}
+body > header nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+body > footer {
+  background-color: #452c0a;
+  color: #f3f1ec;
+  text-align: center;
+}
+.pagination {
+  padding-left: 0px;
+  text-align: center;
+}
+.pagination li {
+  display: inline-block;
+  list-style: none;
+}
+.pagination li.active a,
+.pagination li.disabled a {
+  color: #452c0a;
+  text-decoration: none;
+}
+.contact {
+  background-color: #452c0a;
+}
+.contact a {
+  color: #f3f1ec;
+  text-decoration: none;
+}
+.contact ul {
+  padding-left: 0px;
+}
+.contact ul li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.taxonomy {
+  padding-left: 0px;
+}
+.taxonomy li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
