@@ -9,15 +9,11 @@
         {{ end }}
       {{ end }}
       {{ if .Keywords }}
-<!--
-        <meta name="keywords" content="{{ range $index, $keyword := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ $keyword }}{{ end }}">
--->
         <meta name="keywords" content="{{ delimit .Keywords ", " }}">
       {{ end }}
     {{ end }}
     <title>
       {{ block "title" . }}
-        {{/* <!-- Blocks may include default content. --> */}}
         {{ .Site.Title }}
       {{ end }}
     </title>
@@ -26,15 +22,12 @@
     {{ end }}
   </head>
   <body>
-    <!-- Code that all your templates share, like a header -->
     {{ block "header" . }}
       {{ partial "header.html" . }}
     {{ end }}
     {{ block "main" . }}
-      <!-- The part of the page that begins to differ between templates -->
     {{ end }}
     {{ block "footer" . }}
-      <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
       {{ partial "footer.html" . }}
     {{ end }}
     {{ block "script" . }}
