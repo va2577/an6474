@@ -2,7 +2,6 @@
   <meta name="description" content="{{- default .Summary .Description -}}">
 {{ end }}
 {{ define "title" }}
-  {{/* <!-- This will override the default value set in baseof.html; i.e., "{{.Site.Title}}" in the original example--> */}}
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
@@ -10,23 +9,8 @@
     <h1>{{ .Title }}</h1>
     <article>
       <div>{{ .Date.Format "_2 January 2006" }}</div>
-{{/*
-      {{ if .Site.IsServer }}
-        Date: {{ .Date.Format "Mon Jan _2 15:04:05 2006" }}
-        ReadingTime: {{ .ReadingTime }}minutes
-        WordCount: {{ .WordCount }}
-        {{ .TableOfContents }}
-      {{ end }}
-*/}}
       {{ .Content }}
     </article>
-{{/*
-    <ul>
-      {{ range .Params.tags }}
-        <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . | humanize }}</a></li>
-      {{ end }}
-    </ul>
-*/}}
     <ul class="pagination">
       {{ if .NextInSection }}
         <li><a href="{{ .NextInSection.RelPermalink }}">Newer Post</a></li>
