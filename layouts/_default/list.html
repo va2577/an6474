@@ -1,9 +1,23 @@
+{{ define "title" }}
+  {{ .Title | humanize }} &ndash; {{ .Site.Title }}
+{{ end }}
 {{ define "main" }}
-  <h1>Posts</h1>
-  {{ range .Data.Pages }}
-    <article>
-      <h2>{{ .Title }}</h2>
-      {{ .Content }}
-    </article>
-  {{ end }}
+  <main>
+    {{ if .Title }}
+      <h1>{{ .Title | humanize }}</h1>
+    {{ end }}
+    {{ if .Content }}
+      <article>
+        {{ .Content }}
+      </article>
+    {{ end }}
+    {{ if .Data.Pages }}
+      <ul>
+        {{ range .Paginator.Pages }}
+          {{ .Render "li" }}
+        {{ end }}
+      </ul>
+      {{ template "_internal/pagination.html" . }}
+    {{ end }}
+  </main>
 {{ end }}
