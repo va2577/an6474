@@ -1,0 +1,22 @@
+<footer>
+  <section class="contact">
+    <ul>
+      {{ range .Site.Menus.footer }}
+        <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+      {{ end }}
+      {{ with .Site.Params.github }}
+        <li><a href="https://github.com/{{ . }}">GitHub</a></li>
+      {{ end }}
+      {{ with .Site.Params.instagram }}
+        <li><a href="https://instagram.com/{{ replace . "@" "" }}">Instagram</a></li>
+      {{ end }}
+      {{ with .Site.Params.twitter }}
+        <li><a href="https://twitter.com/{{ replace . "@" "" }}">Twitter</a></li>
+      {{ end }}
+      <li><a href="{{ "/index.xml" | relURL }}">RSS Feed</a></li>
+    </ul>
+  </section>
+  {{ with .Site.Copyright | safeHTML }}
+    {{ . }}
+  {{ end }}
+</footer>
