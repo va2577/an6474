@@ -32,6 +32,7 @@
       {{ if $.Site.Params.adsense }}
         {{ partial "adsense.html" . }}
       {{ end }}
+      {{ template "_internal/disqus.html" . }}
     </main>
     {{ block "footer" . }}
       {{ partial "footer.html" . }}
