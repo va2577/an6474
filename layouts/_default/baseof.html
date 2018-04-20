@@ -8,8 +8,10 @@
           <meta name="description" content="{{- .Description -}}">
         {{ end }}
       {{ end }}
-      {{ if .Keywords }}
-        <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+      {{ block "keywords" . }}
+        {{ if .Keywords }}
+          <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+        {{ end }}
       {{ end }}
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ end }}
@@ -18,6 +20,10 @@
         {{ $.Site.Title }}
       {{ end }}
     </title>
+    {{ block "icon" . }}
+      <link rel="apple-touch-icon" href="{{ "/img/apple-touch-icon.png" | relURL }}">
+      <link rel="icon" type="image/x-icon" href="{{ "/img/favicon.png" | relURL }}">
+    {{ end }}
     {{ block "style" . }}
       <link rel="stylesheet" type="text/css" href="{{ "/css/style.css" | relURL }}">
     {{ end }}
@@ -38,9 +44,11 @@
       {{ partial "footer.html" . }}
     {{ end }}
     {{ block "script" . }}
+      {{/* highlight.js */}}
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/gruvbox-dark.min.css">
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
+      {{/* Google Analytics */}}
       {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
   </body>
