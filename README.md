@@ -1,6 +1,6 @@
-# theme2
+# an6474
 
-theme for Hugo.
+Hugo's theme
 
 ## stylus
 
