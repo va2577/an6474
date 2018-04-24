@@ -10,29 +10,77 @@ $header-color = $c1
 $footer-background-color = $c5
 $footer-color = $c1
 $a-color = $c4
-$blockquote-background-color = $body-background-color
 $blockquote-border-color = darken($body-background-color, 20%)
-$blockquote-color = $body-color
 $code-background-color = $body-color
 $code-color = $body-background-color
-$strong-color = $c2
 $table-border-color = $c5
-$contact-background-color = $footer-background-color
-$contact-color = $footer-color
+//$contact-background-color = $footer-background-color
+//$contact-color = $footer-color
+
+/*
+mixin-color(background-color = $body-background-color, color = $body-color)
+  background-color background-color
+  color color
+
+mixin-color-align(background-color = $body-background-color, color = $body-color)
+  mixin-color background-color color
+  text-align center
+
+mixin-color-alignxx(background-color = $body-background-color, color = $body-color, text-align)
+  mixin-color background-color color
+  if text-align is defined
+    text-align center
+
+mixin-inline-list()
+  display inline-block
+  list-style none
+
+mixin-inline-list-margin()
+  mixin-inline-list()
+  margin-left 0.5rem
+  margin-right 0.5rem
+
+mixin-a(arguments)
+  color arguments
+  text-decoration none
+*/
 
 body
   background-color $body-background-color
   color $body-color
   margin 0px
   padding 0px
+  & > header
+    background-color $header-background-color
+    color $header-color
+    text-align center
+    a
+      color $header-color
+      text-decoration none
+    img
+      max-height 32px
+      max-width 32px
+    ul
+      padding-left 0px
+      & > li
+        display inline-block
+        list-style none
+        margin-left 0.5rem
+        margin-right 0.5rem
+  & > footer
+    /*
+    background-color $footer-background-color
+    color $footer-color
+    text-align center
+    */
+    @extends body > header
 
 a
   color $a-color
 
 blockquote
-  border-left $blockquote-border-color solid 4px
-  color $blockquote-color
-  padding 0 0.5rem
+  border-left $blockquote-border-color solid 0.25rem
+  padding-left 0.5rem
 
 code:not(.hljs)
   background-color $code-background-color
@@ -48,58 +96,35 @@ td
   border $table-border-color solid 1px
   border-collapse collapse
 
-body > header
-  background-color $header-background-color
-  color $header-color
-  text-align center
-  a
-    color $header-color
-    text-decoration none
-  img
-    max-height 32px
-    max-width 32px
-  nav
-    ul
-      padding-left 0px
-      li
-        display inline-block
-        list-style none
-        margin-left 0.5rem
-        margin-right 0.5rem
-
-body > footer
-  background-color $footer-background-color
-  color $footer-color
-  text-align center
-
-.pagination
+/*
+ul.contact
   padding-left 0px
   text-align center
-  li
+  & > li
+    display inline-block
+    list-style none
+    margin-left 0.5rem
+    margin-right 0.5rem
+    & > a
+      color $contact-color
+      text-decoration none
+*/
+
+ul.pagination
+  padding-left 0px
+  text-align center
+  & > li
     display inline-block
     list-style none
     &.active
     &.disabled
-      a
-        color $body-color
+      & > a
+        color arguments
         text-decoration none
 
-.contact
-  background-color $contact-background-color
-  a
-    color $contact-color
-    text-decoration none
-  ul
-    padding-left 0px
-    li
-      display inline-block
-      list-style none
-      margin-left 0.5rem
-      margin-right 0.5rem
-
-.taxonomy
+ul.taxonomy
   padding-left 0px
-  li
+  & > li
     display inline-block
     list-style none
     margin-left 0.5rem

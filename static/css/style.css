@@ -1,16 +1,69 @@
+/*
+mixin-color(background-color = $body-background-color, color = $body-color)
+  background-color background-color
+  color color
+
+mixin-color-align(background-color = $body-background-color, color = $body-color)
+  mixin-color background-color color
+  text-align center
+
+mixin-color-alignxx(background-color = $body-background-color, color = $body-color, text-align)
+  mixin-color background-color color
+  if text-align is defined
+    text-align center
+
+mixin-inline-list()
+  display inline-block
+  list-style none
+
+mixin-inline-list-margin()
+  mixin-inline-list()
+  margin-left 0.5rem
+  margin-right 0.5rem
+
+mixin-a(arguments)
+  color arguments
+  text-decoration none
+*/
 body {
   background-color: #f3f1ec;
   color: #452c0a;
   margin: 0px;
   padding: 0px;
 }
+body > header,
+body > footer {
+  background-color: #452c0a;
+  color: #f3f1ec;
+  text-align: center;
+}
+body > header a,
+body > footer a {
+  color: #f3f1ec;
+  text-decoration: none;
+}
+body > header img,
+body > footer img {
+  max-height: 32px;
+  max-width: 32px;
+}
+body > header ul,
+body > footer ul {
+  padding-left: 0px;
+}
+body > header ul > li,
+body > footer ul > li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 a {
   color: #2dadac;
 }
 blockquote {
-  border-left: #cec6b1 solid 4px;
-  color: #452c0a;
-  padding: 0 0.5rem;
+  border-left: #cec6b1 solid 0.25rem;
+  padding-left: 0.5rem;
 }
 code:not(.hljs) {
   background-color: #452c0a;
@@ -26,69 +79,38 @@ td {
   border: #452c0a solid 1px;
   border-collapse: collapse;
 }
-body > header {
-  background-color: #452c0a;
-  color: #f3f1ec;
+/*
+ul.contact
+  padding-left 0px
+  text-align center
+  & > li
+    display inline-block
+    list-style none
+    margin-left 0.5rem
+    margin-right 0.5rem
+    & > a
+      color $contact-color
+      text-decoration none
+*/
+ul.pagination {
+  padding-left: 0px;
   text-align: center;
 }
-body > header a {
-  color: #f3f1ec;
+ul.pagination > li {
+  display: inline-block;
+  list-style: none;
+}
+ul.pagination > li.active > a,
+ul.pagination > li.disabled > a {
+  color: arguments;
   text-decoration: none;
 }
-body > header img {
-  max-height: 32px;
-  max-width: 32px;
-}
-body > header nav ul {
+ul.taxonomy {
   padding-left: 0px;
 }
-body > header nav ul li {
+ul.taxonomy > li {
   display: inline-block;
   list-style: none;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-body > footer {
-  background-color: #452c0a;
-  color: #f3f1ec;
-  text-align: center;
-}
-.pagination {
-  padding-left: 0px;
-  text-align: center;
-}
-.pagination li {
-  display: inline-block;
-  list-style: none;
-}
-.pagination li.active a,
-.pagination li.disabled a {
-  color: #452c0a;
-  text-decoration: none;
-}
-.contact {
-  background-color: #452c0a;
-}
-.contact a {
-  color: #f3f1ec;
-  text-decoration: none;
-}
-.contact ul {
-  padding-left: 0px;
-}
-.contact ul li {
-  display: inline-block;
-  list-style: none;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-.taxonomy {
-  padding-left: 0px;
-}
-.taxonomy li {
-  display: inline-block;
-  list-style: none;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
