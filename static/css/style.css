@@ -62,7 +62,7 @@ ul.pagination > li {
 }
 ul.pagination > li.active > a,
 ul.pagination > li.disabled > a {
-  color: arguments;
+  color: #452c0a;
   text-decoration: none;
 }
 ul.taxonomy {
