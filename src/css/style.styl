@@ -14,36 +14,6 @@ $blockquote-border-color = darken($body-background-color, 20%)
 $code-background-color = $body-color
 $code-color = $body-background-color
 $table-border-color = $c5
-//$contact-background-color = $footer-background-color
-//$contact-color = $footer-color
-
-/*
-mixin-color(background-color = $body-background-color, color = $body-color)
-  background-color background-color
-  color color
-
-mixin-color-align(background-color = $body-background-color, color = $body-color)
-  mixin-color background-color color
-  text-align center
-
-mixin-color-alignxx(background-color = $body-background-color, color = $body-color, text-align)
-  mixin-color background-color color
-  if text-align is defined
-    text-align center
-
-mixin-inline-list()
-  display inline-block
-  list-style none
-
-mixin-inline-list-margin()
-  mixin-inline-list()
-  margin-left 0.5rem
-  margin-right 0.5rem
-
-mixin-a(arguments)
-  color arguments
-  text-decoration none
-*/
 
 body
   background-color $body-background-color
@@ -68,11 +38,6 @@ body
         margin-left 0.5rem
         margin-right 0.5rem
   & > footer
-    /*
-    background-color $footer-background-color
-    color $footer-color
-    text-align center
-    */
     @extends body > header
 
 a
@@ -95,20 +60,6 @@ th
 td
   border $table-border-color solid 1px
   border-collapse collapse
-
-/*
-ul.contact
-  padding-left 0px
-  text-align center
-  & > li
-    display inline-block
-    list-style none
-    margin-left 0.5rem
-    margin-right 0.5rem
-    & > a
-      color $contact-color
-      text-decoration none
-*/
 
 ul.pagination
   padding-left 0px
