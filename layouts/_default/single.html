@@ -9,6 +9,7 @@
   <article>
     <div>{{ .Date.Format "_2 January 2006" }}</div>
     {{ if $.Site.IsServer }}
+      <div>{{ .Date.Format "15:04:05" }}</div>
       <div>{{ .TableOfContents }}</div>
       <div>{{ .WordCount }}</div>
     {{ end }}
