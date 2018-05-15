@@ -8,6 +8,10 @@
   <h1>{{ .Title }}</h1>
   <article>
     <div>{{ .Date.Format "_2 January 2006" }}</div>
+    {{ if $.Site.IsServer }}
+      <div>{{ .TableOfContents }}</div>
+      <div>{{ .WordCount }}</div>
+    {{ end }}
     {{ .Content }}
   </article>
   {{ if or .NextInSection .PrevInSection }}
