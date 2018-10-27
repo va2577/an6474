@@ -1,18 +1,36 @@
+/*
+$c1 = #f3f1ec
+$c2 = #eb5591
+$c3 = #f5f0cf
+$c4 = #2dadac
+$c5 = #452c0a
+$body-background-color = $c1
+$body-color = $c5
+$header-background-color = $body-color
+$header-color = $body-background-color
+$footer-background-color = $body-color
+$footer-color = $body-background-color
+$a-color = $c4
+$blockquote-border-color = darken($body-background-color, 20%)
+$code-background-color = $body-color
+$code-color = $body-background-color
+$table-border-color = $body-color
+*/
 body {
-  background-color: #f3f1ec;
-  color: #452c0a;
+  background-color: #fff;
+  color: #000;
   margin: 0px;
   padding: 0px;
 }
 body > header,
 body > footer {
-  background-color: #452c0a;
-  color: #f3f1ec;
+  background-color: #fff;
+  color: #000;
   text-align: center;
 }
 body > header a,
 body > footer a {
-  color: #f3f1ec;
+  color: #000;
   text-decoration: none;
 }
 body > header img,
@@ -31,16 +49,21 @@ body > footer ul > li {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
+body > main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
 a {
-  color: #2dadac;
+  color: #0070c9;
 }
 blockquote {
-  border-left: #cec6b1 solid 0.25rem;
+  border-left: #ccc solid 0.25rem;
   padding-left: 0.5rem;
 }
 code:not(.hljs) {
-  background-color: #452c0a;
-  color: #f3f1ec;
+  background-color: #000;
+  color: #fff;
 }
 img {
   max-height: 320px;
@@ -49,7 +72,7 @@ img {
 table,
 th,
 td {
-  border: #452c0a solid 1px;
+  border: #000 solid 1px;
   border-collapse: collapse;
 }
 ul.pagination {
@@ -62,7 +85,7 @@ ul.pagination > li {
 }
 ul.pagination > li.active > a,
 ul.pagination > li.disabled > a {
-  color: #452c0a;
+  color: #000;
   text-decoration: none;
 }
 ul.taxonomy {
@@ -74,3 +97,4 @@ ul.taxonomy > li {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
+

@@ -1,3 +1,4 @@
+/*!
 $c1 = #f3f1ec
 $c2 = #eb5591
 $c3 = #f5f0cf
@@ -14,6 +15,7 @@ $blockquote-border-color = darken($body-background-color, 20%)
 $code-background-color = $body-color
 $code-color = $body-background-color
 $table-border-color = $body-color
+*/
 
 body
   background-color $body-background-color
@@ -37,6 +39,10 @@ body
         list-style none
         margin-left 0.5rem
         margin-right 0.5rem
+  & > main
+    margin-left: auto
+    margin-right: auto
+    max-width: 800px
   & > footer
     @extends body > header
 

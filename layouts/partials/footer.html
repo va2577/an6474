@@ -14,6 +14,16 @@
     {{ end }}
     <li><a href="{{ "/index.xml" | relURL }}">RSS Feed</a></li>
   </ul>
+  <div>
+    <small>
+      {
+      "Colors":
+      [<a href="#anchor-dark" id="anchor-dark">"Dark"</a>,
+      <a href="#anchor-default" id="anchor-default">"Default"</a>,
+      <a href="#anchor-light" id="anchor-light">"Light"</a>]
+      }
+    </small>
+  </div>
   {{ with $.Site.Copyright | safeHTML }}
     <small>{{ . }}</small>
   {{ end }}

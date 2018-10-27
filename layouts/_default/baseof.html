@@ -25,7 +25,9 @@
       <link rel="icon" type="image/x-icon" href="{{ "/img/favicon.png" | relURL }}">
     {{ end }}
     {{ block "style" . }}
-      <link rel="stylesheet" type="text/css" href="{{ "/css/style.css" | relURL }}">
+      <link rel="stylesheet" type="text/css" href="{{ "/css/style-dark.css" | relURL }}" id="link-dark">
+      <link rel="stylesheet" type="text/css" href="{{ "/css/style-light.css" | relURL }}" id="link-light">
+      <link rel="stylesheet" type="text/css" href="{{ "/css/style-default.css" | relURL }}" id="link-default">
     {{ end }}
   </head>
   <body>
@@ -50,6 +52,7 @@
       <script>hljs.initHighlightingOnLoad();</script>
       {{/* Google Analytics */}}
       {{ template "_internal/google_analytics_async.html" . }}
+      <script src="{{ "/js/script.js" | relURL }}"></script>
     {{ end }}
   </body>
 </html>
