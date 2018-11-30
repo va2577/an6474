@@ -19,7 +19,10 @@ document.addEventListener('DOMContentLoaded', event => {
     links.map(x => x.disabled = x.id.replace('link-', '') !== color)
     setItem('color', color)
   }
-  anchors.map(x => x.addEventListener('click', event => f(event.target.id.replace('anchor-', ''))))
+  anchors.map(x => x.addEventListener('click', event => {
+    event.preventDefault()
+    f(event.target.id.replace('anchor-', ''))
+  }))
   const c1 = getItem('color')
   const c2 = !c1 ? 'default' : c1
   f(c2)
