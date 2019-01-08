@@ -27,3 +27,14 @@ document.addEventListener('DOMContentLoaded', event => {
   const c2 = !c1 ? 'default' : c1
   f(c2)
 })
+
+document.addEventListener('DOMContentLoaded', event => {
+  const tables = document.querySelectorAll('table')
+  const f = e => {
+    const div = document.createElement('div')
+    div.classList.add("overflow-auto")
+    e.parentElement.insertBefore(div, e)
+    div.appendChild(e)
+  }
+  [].map.call(tables, x => f(x))
+})

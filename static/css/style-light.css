@@ -66,8 +66,15 @@ code:not(.hljs) {
   color: #fff;
 }
 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   max-height: 320px;
-  max-width: 100%;
+  max-width: auto;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
 }
 table,
 th,
@@ -96,5 +103,8 @@ ul.taxonomy > li {
   list-style: none;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+div.overflow-auto {
+  overflow: auto;
 }
 
