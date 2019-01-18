@@ -104,7 +104,8 @@ ul.taxonomy > li {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-div.overflow-auto {
+div.overflow-auto,
+span.mjx-chtml {
   overflow: auto;
 }
 
